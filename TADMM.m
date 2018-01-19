@@ -1,6 +1,6 @@
 function [S, history,k] = TADMM(D, beta, TOL,toll)
 
-% covsel  Sparse inverse covariance selection via GSADMM
+% covsel  Sparse inverse covariance selection via TADMM
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 fprintf('Algorithm:  TADMM_II\n');
 

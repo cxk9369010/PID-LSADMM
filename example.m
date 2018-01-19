@@ -3,22 +3,9 @@
 clear all;
 randn('seed', 0);
 rand('seed', 0);
-%% Table 3
-%%
-% TOL=1e-3; 
-%     toll=1e-7;
-%     toll=1e-12;
-%%
-% TOL=1e-6; 
-%     toll=1e-8;
-%     toll=1e-14;
-%%
-% TOL=1e-9; 
-%     toll=1e-7;
-%     toll=1e-15;
-%% Fig5.1-5.2
+
 results=[];
-for method = 1:5; %%%  1--- PID_GSADMM_II;  2---GSADMMIII; 3---PJALM;  4---TADMM; 5---HTY
+for method = 1:5; %%%  1--- PID_LSADMM_II;  2---GSADMMIII; 3---PJALM;  4---TADMM; 5---HTY
 TOL=1e-10; 
 toll=1e-9;
 
@@ -71,8 +58,7 @@ end
 
 results=[results; para.tau para.alpha sigma iter-1 toc(t_start) history.equ(end) history.error(end)];
 end
-% end
-%end
+
 
 
 

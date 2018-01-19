@@ -60,10 +60,3 @@ results=[results; para.tau para.alpha sigma iter-1 toc(t_start) history.equ(end)
 end
 
 
-
-
-%[S_PID_GSADMMII, history_PID_GSADMMII] = PID_GSADMM_II(D, 0.05, TOL,toll,para); %iter  best
-%[S_PJALM, history_PJALM] = PJALM(D, 0.05, TOL,toll);
-%[S_HTY, history_HTY] = HTY(D, 0.05, TOL,toll);
-%[S_Bai, history_Bai] = GR_PPA(D, TOL,toll);
-%[S_TADM, history_TADM] = TADMM(D, 0.05, TOL,toll);

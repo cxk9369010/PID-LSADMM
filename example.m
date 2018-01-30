@@ -37,7 +37,7 @@ if method ==1
 %     [S_PID_GSADMMII, history,iter] = PID_LSADMM_I(D, sigma, TOL,toll,para); %iter  best
     q=2;
     sigma=0.12;
-    para.alpha = 1.99;
+    para.alpha = 1.7;
     para.tau = 1.001*q*((2+para.alpha)/4);
     [S_PID_GSADMMII, history,iter] = PID_LSADMM_II(D, sigma, TOL,toll,para); %iter  best
 elseif method ==2

@@ -12,7 +12,7 @@ MAX_ITER = 1000;
 %% Data preprocessing
 C = cov(D);
 n = size(C,1);
-rho_1= 2.001;  %>p-1=1
+rho_1= 1.001;  %>p-1=1
 
 bar_rho_1= rho_1+1;
 

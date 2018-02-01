@@ -4,8 +4,8 @@ clear all;
 randn('seed', 0);
 rand('seed', 0);
 
-TOL=1e-6; 
-toll=1e-7;
+TOL=1e-7; 
+toll=1e-6;
 
 
 n = 100;   % number of features

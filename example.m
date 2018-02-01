@@ -30,7 +30,7 @@ D = mvnrnd(zeros(1,n), S, N);
 t_start = tic;
 %%
 if method ==1
-%     q=2;
+%     q=1;
 %     sigma=0.05;
 %     para.alpha = 1.99;
 %     para.tau = 1.001*q*((2+para.alpha)/4);

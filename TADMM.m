@@ -1,4 +1,4 @@
-function [S, history,k] = TADMM(D, beta, TOL,toll)
+function [history,k] = TADMM(D, beta, TOL,toll,para)
 
 % covsel  Sparse inverse covariance selection via TADMM
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -22,10 +22,7 @@ bar_v=beta;
 %% inital iterative values
 EY= eye(n,n); %identity matrix
 
-%X = eye(n,n);S =2*eye(n,n); L = eye(n,n); lambda = zeros(n); %table 3
-X = zeros(n);S =zeros(n); L = zeros(n); lambda = zeros(n);
-% X = eye(n,n);S = eye(n,n);  L =zeros(n);  lambda = zeros(n); %feasible point
-% X = eye(n,n);S =4*eye(n,n); L = 3*eye(n,n); lambda = zeros(n);
+X = para.X; S = para.S; L = para.L; lambda = para.lambda;
 
 %% corection facor
 bar_a=1.6;

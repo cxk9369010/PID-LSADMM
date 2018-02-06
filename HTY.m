@@ -1,4 +1,4 @@
-function [S, history,k] = HTY(D, beta, TOL,toll)
+function [history,k] = HTY(D, beta, TOL,toll,para)
 
 % covsel  Sparse inverse covariance selection via GSADMM
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -20,10 +20,7 @@ u=2.01;
 EY= eye(n,n); %identity matrix
 H=beta*EY;
 
-%X = eye(n,n);S =2*eye(n,n); L = eye(n,n); lambda = zeros(n); %table 3
-X = zeros(n);S =zeros(n); L = zeros(n); lambda = zeros(n);
-% X = eye(n,n);S = eye(n,n);  L =zeros(n);  lambda = zeros(n); %feasible point
-% X = eye(n,n);S =4*eye(n,n); L = 3*eye(n,n); lambda = zeros(n);
+X = para.X; S = para.S; L = para.L; lambda = para.lambda;
 
 if ~QUIET
     fprintf('%3s\t%10s\t%10s\t%10s\n', 'iter',  'equ norm', 'error''ROB');

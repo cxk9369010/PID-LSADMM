@@ -1,9 +1,10 @@
-function [S, history,k] = PID_LSADMM_II(D, beta, TOL,toll,para)
+function [history,k] = PID_LSADMM_II(D, beta, TOL,toll,para)
 
 % covsel  Sparse inverse covariance selection via LSADMM
 % Optimal linearized ADMM for multi-block separable convex programming
+% Written by Xiaokai Chang email:15293183303@163.com
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-fprintf('Algorithm:  PID_LSADMM_II\n');
+fprintf('Algorithm:  LSADMM_1-2\n');
 
 %% Global constants and defaults
 QUIET    = 1;
@@ -32,10 +33,7 @@ v=0.005; nu=0.05;
 %% ADMM inital values
 EY= eye(n,n); %identity matrix
 
-%X = eye(n,n);S =2*eye(n,n); L = eye(n,n); lambda = zeros(n); %table 3 
-X = zeros(n);S =zeros(n); L = zeros(n); lambda = zeros(n);
-% X = eye(n,n);S = eye(n,n);  L =zeros(n);  lambda = zeros(n); %feasible point
-% X = eye(n,n);S =4*eye(n,n); L = 3*eye(n,n); lambda = zeros(n);
+X = para.X; S = para.S; L = para.L; lambda = para.lambda;
 
 %%
 if ~QUIET
@@ -125,5 +123,6 @@ end
 function y = shrinkage(a, kappa)
     y = max(0, a-kappa) - max(0, -a-kappa);
 end
+
 
 

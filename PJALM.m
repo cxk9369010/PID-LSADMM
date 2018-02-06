@@ -1,4 +1,4 @@
-function [S, history,k] = PJALM(D, beta, TOL,toll)
+function [history,k] = PJALM(D, beta, TOL,toll,para)
 
 % covsel  Sparse inverse covariance selection via GSADMM
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -20,10 +20,7 @@ v=0.005; nu=0.05;
 %% ADMM inital values
 EY= eye(n,n); %identity matrix
 
-%X = eye(n,n);S =2*eye(n,n); L = eye(n,n); lambda = zeros(n); %table 3
-X = zeros(n);S =zeros(n); L = zeros(n); lambda = zeros(n);
-% X = eye(n,n);S = eye(n,n);  L =zeros(n);  lambda = zeros(n); %feasible point
-% X = eye(n,n);S =4*eye(n,n); L = 3*eye(n,n); lambda = zeros(n);
+X = para.X; S = para.S; L = para.L; lambda = para.lambda;
 
 
 if ~QUIET
@@ -99,5 +96,7 @@ end
 function y = shrinkage(a, kappa)
     y = max(0, a-kappa) - max(0, -a-kappa);
 end
+
+
 
 
